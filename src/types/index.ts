@@ -13,4 +13,9 @@ export interface IProductCollection {
   shoes: IProduct[];
   accessories: IProduct[];
   makeup: IProduct[];
+  dresses: IProduct[];
+  shirts: IProduct[];
+  tshirts: IProduct[];
+  swimwear: IProduct[];
+  jeans: IProduct[];
 }
