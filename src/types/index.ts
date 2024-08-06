@@ -1,10 +1,12 @@
+import { StaticImageData } from "next/image";
+
 export interface IProduct {
   id: number;
   title: string;
   description: string;
   price: number;
   category: string;
-  image: string;
+  image: StaticImageData;
 }
 
 export interface IProductCollection {
