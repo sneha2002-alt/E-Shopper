@@ -177,8 +177,9 @@ import sw12 from "@/resources/img/swimWear/swim12.jpg";
 import sw13 from "@/resources/img/swimWear/swim13.jpg";
 import sw14 from "@/resources/img/swimWear/swim14.jpg";
 import sw15 from "@/resources/img/swimWear/swim15.jpg";
+import { IProductCollection } from "@/types";
 
-export const productData = {
+export const productData: IProductCollection = {
   jackets: [
     {
       id: 1,
