@@ -8,7 +8,9 @@ export default function Home() {
     <main>
       <Tabs defaultValue="mainHero">
         <div className="flex">
-          <Sidebar />
+          <div className="md:w-1/4 w-1/2">
+            <Sidebar />
+          </div>
           <Hero />
         </div>
       </Tabs>
