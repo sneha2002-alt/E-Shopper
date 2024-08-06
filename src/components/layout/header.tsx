@@ -20,7 +20,12 @@ function Header() {
 
         <ul className="hidden md:flex md:gap-5 lg:gap-10 text-sm items-center">
           {navLinksArr.map((el, i) => (
-            <li key={i}>{el}</li>
+            <li
+              key={i}
+              className="hover:border-b-2 border-rose-400 cursor-pointer "
+            >
+              {el}
+            </li>
           ))}
         </ul>
 

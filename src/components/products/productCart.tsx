@@ -3,14 +3,14 @@ import React from "react";
 
 function ProductCart({ data }: any) {
   return (
-    <div className="grid gap-3 border-2 justify-center w-full p-5">
-      <div className="w-full h-[500px]">
+    <div className="grid gap-3 shadow-lg shadow-rose-300 border-rose-500 justify-center w-full p-5">
+      <div className="w-full h-fit">
         <Image
           src={data.image}
           alt={data.title}
           width="500"
           height="500"
-          className="object-cover"
+          className=""
         />
       </div>
       <div>
