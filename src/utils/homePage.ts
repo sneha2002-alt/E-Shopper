@@ -33,22 +33,7 @@ export const homeData = {
   },
 
   footer: {
-    logo: "EXERY",
-    helpAndInfo: {
-      heading: "Help & Information",
-      linksArr: ["Help", "Track Order", "Delivery & returns"],
-    },
-    aboutExery: {
-      heading: "About Exery",
-      linksArr: ["About Us", "Careers of Exery", "Investors' site"],
-    },
-    moreInfo: {
-      heading: "More from Exery",
-      linksArr: ["Mobile and Exery apps", "Gift Vouchers", "Book Friday"],
-    },
-  },
-  ccAndRights: {
-    heading: "Copyright © 2022 Exery. All Rights Reserved.",
-    subHeadingsArr: ["Privacy & Cookies", "Ts&Cs", "Accessibility"],
+    heading: "Copyright © 2022 E SHOPPER. All Rights Reserved.",
+    subHeadingsArr: ["FAQs", "Help", "Support"],
   },
 };
