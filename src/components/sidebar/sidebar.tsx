@@ -7,7 +7,7 @@ function Sidebar() {
     sidebar: { heading, catArr },
   } = homeData;
   return (
-    <div className="w-1/4 h-[90vh] border-2 text-center font-sans sticky left-0 bottom-0">
+    <div className="w-full h-[90vh] border-2 text-center font-sans sticky left-0 bottom-0">
       <div className="grid w-full">
         <h1 className="p-5 bg-rose-500 w-full font-semibold text-white">
           {heading}
