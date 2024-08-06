@@ -17,6 +17,20 @@ export const homeData = {
       { title: "Makeup", value: "makeup" },
     ],
   },
+  heroSection: {
+    heroSectionTabsValuesArr: [
+      "mainHero",
+      "dresses",
+      "shirts",
+      "jeans",
+      "swimwear",
+      "jackets",
+      "sportswear",
+      "shoes",
+      "accessories",
+      "makeup",
+    ],
+  },
 
   footer: {
     logo: "EXERY",

@@ -1,6 +1,6 @@
 import { IProductCollection } from "@/types";
 
-export const productData: IProductCollection = {
+export const productData = {
   jackets: [
     {
       id: 1,
