@@ -10,7 +10,7 @@ function ProductCart({ data }: any) {
           alt={data.title}
           width="500"
           height="500"
-          className=""
+          className="h-56 w-full object-cover"
         />
       </div>
       <div>
