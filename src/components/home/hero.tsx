@@ -2,9 +2,9 @@ import { homeData } from "@/utils/homePage";
 import { TabsContent } from "@radix-ui/react-tabs";
 import React from "react";
 import ShowProducts from "../products/showProducts";
-import MainHero from "./mainHero";
 import { productData } from "@/utils/data";
 import { IProductCollection } from "@/types";
+import Product from "./product";
 
 type HeroTabs = keyof IProductCollection | "mainHero";
 
@@ -20,7 +20,7 @@ function Hero() {
       {validTabsValuesArr.map((value) => (
         <TabsContent key={value} value={value}>
           {value === "mainHero" ? (
-            <MainHero />
+            <Product />
           ) : (
             <ShowProducts
               dataVal={value}

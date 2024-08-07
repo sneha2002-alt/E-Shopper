@@ -5,6 +5,7 @@ import EmptyHeart from "@/resources/svg/emptyHeart";
 import cartIcon from "@/resources/svg/cartIcon.svg";
 import NavSideSheet from "../navSheet/NavSideSheet";
 import { homeData } from "@/utils/homePage";
+import Link from "next/link";
 
 function Header() {
   const {
@@ -20,40 +21,16 @@ function Header() {
 
         <ul className="hidden md:flex md:gap-5 lg:gap-10 text-sm items-center">
           {navLinksArr.map((el, i) => (
-            <li
+            <Link
               key={i}
-              className="hover:border-b-2 border-rose-400 cursor-pointer "
+              href={el.path}
+              className="hover:border-b-2 border-rose-400 cursor-pointer"
             >
-              {el}
-            </li>
+              {el.link}
+            </Link>
           ))}
         </ul>
 
-        <div className="flex justify-between items-center">
-          <div className="hidden md:flex items-center  border-4 p-2 px-3  md:gap-3 lg:gap-5 rounded-full w-3/4">
-            <div>
-              <Image
-                src={magnifinGlass}
-                width="30"
-                height="30"
-                alt="magnifinGlass"
-              />
-            </div>
-            <input
-              className=" w-full outline-none text-zinc-400"
-              placeholder="search..."
-              type="text"
-            />
-          </div>
-          <div className="hidden md:flex justify-between items-cente gap-3">
-            <div>
-              <EmptyHeart iconColor={"black"} />
-            </div>
-            <div>
-              <Image src={cartIcon} alt="cartIcon" width="25" height="25" />
-            </div>
-          </div>
-        </div>
         <div className="md:hidden flex items-center">
           <NavSideSheet />
         </div>

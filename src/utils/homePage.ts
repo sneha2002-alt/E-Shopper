@@ -1,6 +1,8 @@
 export const homeData = {
   header: {
-    navLinksArr: ["Home", "Products", "Shop", "Pages", "Contacts"],
+    navLinksArr: [ { path: "/", link: "Home" },
+      { path: "/products", link: "Products" },
+      { path: "/contacts", link: "Contacts" }],
     Logo: "E-Shopper",
   },
   sidebar: {
@@ -30,6 +32,11 @@ export const homeData = {
       "accessories",
       "makeup",
     ],
+  },
+  mainHero: {
+    subHeading: "10% OFF YOUR FIRST ORDER",
+    heading: "Fashionable Dress",
+    btnText: "Shop Now",
   },
 
   footer: {
