@@ -71,3 +71,5 @@ category
 - update sidebar with checkbox icon
   according to category
 - fix sidebar width and main
+
+  --> filter => (data=>Hero) showProduct to sidebar => priceFilterComponent(dataArr) => filter(arrOfTheCategory)

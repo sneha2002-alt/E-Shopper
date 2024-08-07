@@ -8,7 +8,7 @@ export default function Page() {
     <div>
       <Tabs defaultValue="mainHero">
         <div className="flex">
-          <div className="md:w-1/4 w-1/2">
+          <div className="md:w-1/5 w-1/2">
             <Sidebar />
           </div>
           <Hero />

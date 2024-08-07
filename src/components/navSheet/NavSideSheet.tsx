@@ -12,6 +12,7 @@ function NavSideSheet() {
   const {
     header: { navLinksArr },
   } = homeData;
+
   return (
     <div>
       <Sheet>
