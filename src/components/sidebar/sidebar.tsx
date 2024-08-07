@@ -1,13 +1,16 @@
+// Sidebar.tsx
+import React from "react";
 import { homeData } from "@/utils/homePage";
 import { TabsList, TabsTrigger } from "@radix-ui/react-tabs";
-import React from "react";
+import PriceFilter from "../filters/priceFilter";
 
 function Sidebar() {
   const {
     sidebar: { heading, catArr },
   } = homeData;
+
   return (
-    <div className="w-full h-[90vh] border-2 text-center font-sans sticky left-0 bottom-0">
+    <div className="w-full h-fit border-2 text-center font-sans sticky left-0 bottom-0">
       <div className="grid w-full">
         <h1 className="p-5 bg-rose-500 w-full font-semibold text-white">
           {heading}
@@ -25,6 +28,7 @@ function Sidebar() {
             ))}
           </TabsList>
         </div>
+        <PriceFilter />
       </div>
     </div>
   );
