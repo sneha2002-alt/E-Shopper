@@ -5,6 +5,7 @@ import EmptyHeart from "@/resources/svg/emptyHeart";
 import cartIcon from "@/resources/svg/cartIcon.svg";
 import NavSideSheet from "../navSheet/NavSideSheet";
 import { homeData } from "@/utils/homePage";
+import Link from "next/link";
 
 function Header() {
   const {
@@ -20,12 +21,13 @@ function Header() {
 
         <ul className="hidden md:flex md:gap-5 lg:gap-10 text-sm items-center">
           {navLinksArr.map((el, i) => (
-            <li
+            <Link
               key={i}
-              className="hover:border-b-2 border-rose-400 cursor-pointer "
+              href={el.path}
+              className="hover:border-b-2 border-rose-400 cursor-pointer"
             >
-              {el}
-            </li>
+              {el.link}
+            </Link>
           ))}
         </ul>
 
