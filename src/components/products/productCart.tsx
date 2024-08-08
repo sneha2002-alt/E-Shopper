@@ -14,8 +14,8 @@ function ProductCart({ data }: any) {
         />
       </div>
       <div>
-        <h1>{data.title}</h1>
-        <h2>Price: {data.price}</h2>
+        <h1 className="font-bold text-2xl">{data.title}</h1>
+        <h2>Price: ${data.price}</h2>
         <h3>{data.description}</h3>
       </div>
     </div>

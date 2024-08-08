@@ -16,13 +16,13 @@ category
 
 ### First Priority
 
-1. Update Home page
-2. Adding routes
-3. add carousel in home page
-4. update product page
+1. Update Home page tick
+2. Adding routes tick
+3. add carousel in home page tick
+4. update product page 50%
 5. update product card UI and add to cart btn, add to wishlist
-6. add clear filter btn
-7. add searching functionality
+6. add clear filter btn - tick
+7. add searching functionality - tick
 8. update sidebar with checkbox icon
    according to category
 9. show pricing filter in sidebar
@@ -58,18 +58,9 @@ category
 
 ## --> SNEHA
 
-- All Product Page
-- Update UI of Home Page (set carousel)
-- UI of Product Card
-- Like BTN
+- Navbar
+- all product page
 
 ## --> MAHIN
 
-- Redux / ContextAPI - optional
-- set filter in sidebar
-- clear btn
-- update sidebar with checkbox icon
-  according to category
-- fix sidebar width and main
-
-  --> filter => (data=>Hero) showProduct to sidebar => priceFilterComponent(dataArr) => filter(arrOfTheCategory)
+- side bar UI

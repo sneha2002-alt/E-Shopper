@@ -3,6 +3,8 @@ import React from "react";
 import { homeData } from "@/utils/homePage";
 import { TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import PriceFilter from "../filters/priceFilter";
+import { Button } from "../ui/button";
+import RemoveFilter from "../filters/removeFilter";
 
 function Sidebar() {
   const {
@@ -30,6 +32,7 @@ function Sidebar() {
         </div>
         <PriceFilter />
       </div>
+      <RemoveFilter />
     </div>
   );
 }
