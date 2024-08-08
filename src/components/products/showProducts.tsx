@@ -1,12 +1,12 @@
-// ShowProducts.tsx
 "use client";
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import ProductCart from "./productCart";
 import usePagination from "@/customHooks/usePagination";
 import { FILTERED_PRODUCTS, PRODUCT_ARRAY } from "@/Redux/products/actionTypes";
-import Image from "next/image";
-import magnifinGlass from "@/resources/svg/magnifineGlass.svg";
+import SearchProduct from "./searchProduct";
+import ProductCart from "./productCart";
+import { XIcon } from "lucide-react";
+import { REMOVE_SINGLE_DATA } from "@/Redux/singleProduct/actionTypes";
 
 interface ShowProductsProps {
   dataVal: string;
@@ -15,14 +15,20 @@ interface ShowProductsProps {
 
 const ShowProducts: React.FC<ShowProductsProps> = ({ dataVal, productArr }) => {
   const itemsPerPage = 6;
-  const { filteredProducts } = useSelector(
-    (state: any) => state.singleProductArr
+
+  const filteredProducts = useSelector(
+    (state: any) => state.singleProductArr.filteredProducts || []
   );
+  const objData = useSelector((state: any) => state.productObj || {});
 
   const { currentPage, totalPages, currentItems, handlePageChange } =
     usePagination(filteredProducts, itemsPerPage);
 
   const dispatch = useDispatch();
+
+  const removeSearchedData = () => {
+    dispatch({ type: REMOVE_SINGLE_DATA });
+  };
 
   useEffect(() => {
     dispatch({ type: PRODUCT_ARRAY, payload: productArr });
@@ -39,24 +45,23 @@ const ShowProducts: React.FC<ShowProductsProps> = ({ dataVal, productArr }) => {
         <h1 className="text-3xl md:text-5xl font-semibold">
           {dataVal.toUpperCase()}
         </h1>
-        <div className="hidden md:flex items-center  border-4 border-rose-400 p-2 px-3  md:gap-3 lg:gap-5 rounded-full w-1/2">
-          <div>
-            <Image
-              src={magnifinGlass}
-              width="30"
-              height="30"
-              alt="magnifinGlass"
-            />
-          </div>
-          <input
-            className=" w-full outline-none bg-transparent"
-            placeholder="search..."
-            type="text"
-          />
-        </div>
+        <SearchProduct productArray={productArr} />
       </div>
-      <div className="my-5">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="my-10">
+        {objData.title && (
+          <div className="w-1/2 border-2 border-rose-500 pt-2">
+            <div className="flex justify-between px-10 items-center bg-white">
+              <h1 className=" text-center text-3xl font-semibold text-rose-600">
+                Your Searched Result
+              </h1>
+              <div onClick={removeSearchedData} className="cursor-pointer">
+                <XIcon />
+              </div>
+            </div>
+            <ProductCart data={objData} />
+          </div>
+        )}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 my-10">
           {currentItems && currentItems.length > 0 ? (
             currentItems.map((el: any) => <ProductCart key={el.id} data={el} />)
           ) : (
