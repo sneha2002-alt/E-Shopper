@@ -28,7 +28,7 @@ function Footer() {
     footer: { heading, subHeadingsArr },
   } = homeData;
   return (
-    <footer className="w-full h-full p-4 md:px-10 bg-slate-400">
+    <footer className="w-full p-4 md:px-10 bg-slate-400 fixed bottom-0">
       <div className="w-full flex flex-col sm:flex-row justify-between items-center text-zinc-900 gap-8">
         <h1 className="text-center text-xs">{heading}</h1>
         <div className="flex flex-wrap gap-1 sm:gap-5 text-xs">
