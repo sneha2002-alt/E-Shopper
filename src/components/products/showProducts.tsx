@@ -7,6 +7,8 @@ import SearchProduct from "./searchProduct";
 import ProductCart from "./productCart";
 import { XIcon } from "lucide-react";
 import { REMOVE_SINGLE_DATA } from "@/Redux/singleProduct/actionTypes";
+import { CURRENT_CONTENT } from "@/Redux/sidebar/actionTypes";
+import { useSearchParams } from "next/navigation";
 
 interface ShowProductsProps {
   dataVal: string;
@@ -21,6 +23,9 @@ const ShowProducts: React.FC<ShowProductsProps> = ({ dataVal, productArr }) => {
   );
   const objData = useSelector((state: any) => state.productObj || {});
 
+  const searchParams = useSearchParams();
+  const search = searchParams.get("category");
+
   const { currentPage, totalPages, currentItems, handlePageChange } =
     usePagination(filteredProducts, itemsPerPage);
 
@@ -33,10 +38,7 @@ const ShowProducts: React.FC<ShowProductsProps> = ({ dataVal, productArr }) => {
   useEffect(() => {
     dispatch({ type: PRODUCT_ARRAY, payload: productArr });
     dispatch({ type: FILTERED_PRODUCTS, payload: productArr });
-    const section = document.getElementById("up");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    dispatch({ type: CURRENT_CONTENT, payload: dataVal });
   }, [dispatch, productArr]);
 
   return (
@@ -73,7 +75,13 @@ const ShowProducts: React.FC<ShowProductsProps> = ({ dataVal, productArr }) => {
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index}
-            onClick={() => handlePageChange(index + 1)}
+            onClick={() => {
+              handlePageChange(index + 1);
+              const section = document.getElementById("up");
+              if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
             className={`px-4 py-2 mx-1 ${
               currentPage === index + 1
                 ? "bg-rose-500 text-white"
