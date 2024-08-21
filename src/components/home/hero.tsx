@@ -20,9 +20,8 @@ function Hero() {
 
   const { currentTab } = useSelector((state: any) => state);
 
-
   return (
-    <section className="w-full p-5 bg-rose-100 max-h-[90vh] overflow-scroll border-2">
+    <section className="w-3/4 p-5 bg-rose-100 max-h-[90vh] overflow-scroll border-2">
       {validTabsValuesArr.map((value) => (
         <TabsContent key={value} value={value}>
           {value === "mainHero" ? (
